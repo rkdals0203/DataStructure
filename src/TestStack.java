@@ -38,10 +38,11 @@ class SinglyLinkedList<T> {
 
         Node<T> node = new Node<>(nodeData, null);
 
-        if (head == null) {   //만약 기존 연결리스트에 다른 노드가 있다면 top의 포인터를 새 노드로 지정하고 내가 그 노드를 지정해야함
-            head = node;
+        if (head == null) {
+            node.next = head;	// 새 노드의 다음 노드로 head 노드를 연결
+            head = node; //head 노드가 됨
         } else{
-            tail.next = node;
+            tail.next = node; //마지막노드의 다음 노드가 새 노드를 가리키게함
     }
         tail = node;
     }
